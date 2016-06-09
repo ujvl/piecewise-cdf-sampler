@@ -1,7 +1,7 @@
 # piecewise-cdf-sampler
 Sample from a linearly piecewise CDF, represented by its (x,y) coordinates
 
-Useful for resampling data from CDF images where source data is not recoverable.
+Useful for sampling from an empirical CDF where source data is not available but an image or otherwise approximate representation is.
 
 **Input**
 
