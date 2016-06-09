@@ -12,4 +12,4 @@ Useful for resampling data from CDF images where source data is not recoverable.
 
 **Output**
 
-`num` samples from the input CDF file
+`num` samples from the input CDF
