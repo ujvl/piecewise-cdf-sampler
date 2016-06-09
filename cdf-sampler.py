@@ -92,19 +92,22 @@ def contain_func(x):
             return 1
     return cmp
 
+def usage():
+    print("Usage: python", sys.argv[0], "[piecewise-data] [num]")
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python", sys.argv[0], "[piecewise-data] [num]")
+        usage()
         exit()
-    try:
-        distrname = sys.argv[1]
-        num = sys.argv[2]
-        distr_file = open(distrname, 'r')
-    except IndexError:
-        num = sys.argv[1]
+    elif len(sys.argv) < 3:
         distr_file = sys.stdin.readlines()
+        num = int(sys.argv[1])
+    else:
+        distrname = sys.argv[1]
+        num = int(sys.argv[2])
+        distr_file = open(distrname, 'r')
 
-    piecewise_func = InversePiecewise(distrf)
+    piecewise_func = InversePiecewise(distr_file)
 
     for i in xrange(num):
         print(int(round(piecewise_func.evaluate(random.random()))))
